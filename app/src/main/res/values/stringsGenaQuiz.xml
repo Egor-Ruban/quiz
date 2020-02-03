@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="questions">
+        <item>как крокодил Гена искал себе друзей?</item>
+        <item>как звали старуху?</item>
+        <item>какую песню пел крокодил в свой день рождения?</item>
+    </string-array>
+
+    <string-array name="answers_1">
+        <item>распечатал объявление о поиске друзей</item>
+        <item>знакомился на улице</item>
+        <item>выступал на радио с объявлением</item>
+    </string-array>
+
+    <string-array name="answers_2">
+        <item>шопоголик</item>
+        <item>шапокляк</item>
+        <item>шапоренко</item>
+    </string-array>
+
+    <string-array name="answers_3">
+        <item>пусть бегут неуклюже</item>
+        <item>голубой вагон</item>
+        <item>от улыбки хмурый день светлей</item>
+    </string-array>
+
+    <string-array name="rightAnswers">
+        <item>распечатал объявление о поиске друзей</item>
+        <item>шапокляк</item>
+        <item>пусть бегут неуклюже</item>
+    </string-array>
+</resources>

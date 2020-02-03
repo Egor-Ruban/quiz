@@ -1,72 +1,59 @@
 package ru.tsu.quiz
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.start_activity.*
 
 class MainActivity : AppCompatActivity() {
-    private var counter = 0
-    private var numberOfQuestion = 0
+    private var rightAnswered = 0
+    private var asked = 0
 
-    private val questions = arrayOf("как крокодил Гена искал себе друзей?",
-        "как звали старуху?",
-        "какую песню пел крокодил в свой день рождения?")
-    private val answers = arrayOf(arrayOf("распечатал объявление о поиске друзей",
-        "знакомился на улице",
-        "выступал на радио с объявлением"
-        ),
-        arrayOf("шопоголик",
-            "шапокляк",
-            "шапоренко"
-        ),
-        arrayOf("пусть бегут неуклюже",
-            "голубой вагон",
-            "от улыбки хмурый день светлей"
-        )
-    )
-
-    private val rightAnswers = arrayOf("распечатал объявление о поиске друзей",
-        "шапокляк",
-        "пусть бегут неуклюже"
-    )
-
+    private var questions = arrayOf<String>()
+    private var answers = arrayOf<Array<String>>()
+    private var rightAnswers = arrayOf<String>()
     private val images = arrayOf(R.drawable.gena, R.drawable.shapoklyak, R.drawable.gena_singing)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.start_activity)
 
-        btnStart.setOnClickListener{
+        questions = resources.getStringArray(R.array.questions)
+        answers = arrayOf(
+            resources.getStringArray(R.array.answers_1),
+            resources.getStringArray(R.array.answers_2),
+            resources.getStringArray(R.array.answers_3)
+        )
+        rightAnswers = resources.getStringArray(R.array.rightAnswers)
+
+        btnStart.setOnClickListener {
             askNextQuestion()
         }
 
-        btnClose.setOnClickListener{
+        btnClose.setOnClickListener {
             finish()
         }
-
-
     }
 
-    private fun askNextQuestion(){
+    private fun askNextQuestion() {
         val intent = Intent(this, QuestionActivity::class.java)
-        intent.putExtra("question",questions[numberOfQuestion])
-        intent.putExtra("answers",answers[numberOfQuestion])
-        intent.putExtra("rightAnswer",rightAnswers[numberOfQuestion])
-        intent.putExtra("image",images[numberOfQuestion])
-        startActivityForResult(intent,1)
-        numberOfQuestion++
+        intent.putExtra("question", questions[asked])
+        intent.putExtra("answers", answers[asked])
+        intent.putExtra("rightAnswer", rightAnswers[asked])
+        intent.putExtra("image", images[asked])
+        startActivityForResult(intent, 1)
+        asked++
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(data?.getBooleanExtra("result",false) ?: false){
-            counter++
+        if (data?.getBooleanExtra("result", false) == true) {
+            rightAnswered++
         }
 
-        if(numberOfQuestion==questions.size){
+        if (asked == questions.size) {
             val intent = Intent(this, ResultActivity::class.java)
-            intent.putExtra("counter",counter)
+            intent.putExtra("counter", rightAnswered)
             intent.putExtra("length", questions.size)
             startActivity(intent)
             finish()
