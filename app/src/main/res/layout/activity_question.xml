@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:freezesText="false"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/colorSecondary"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/ivQuestion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="В каких фильмах он играл" />
+
+    <ImageView
+        android:id="@+id/ivQuestion"
+        android:layout_width="360dp"
+        android:layout_height="240dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/group_286"
+        android:paddingLeft="@dimen/spacing_small_8"
+        android:paddingTop="@dimen/spacing_normal_16"
+        android:paddingRight="@dimen/spacing_small_8"
+        android:paddingBottom="@dimen/spacing_normal_16"
+        app:layout_constraintBottom_toTopOf="@+id/btnQuestionFirst"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestion"
+        app:srcCompat="@drawable/image" />
+
+    <Button
+        android:id="@+id/btnQuestionFirst"
+        style="@style/Button.Question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnQuestionSecond"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivQuestion" />
+
+    <Button
+        android:id="@+id/btnQuestionSecond"
+        style="@style/Button.Question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnQuestionThird"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnQuestionFirst" />
+
+
+    <Button
+        android:id="@+id/btnQuestionThird"
+        style="@style/Button.Question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnQuestionSecond" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

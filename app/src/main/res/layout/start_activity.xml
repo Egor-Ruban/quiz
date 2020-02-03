@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorSecondary"
+        android:text = "QuizTIME"
+        android:gravity="center"
+        android:textSize="88sp"
+        android:layout_marginTop="@dimen/space_maximum_72"
+        android:layout_marginBottom="@dimen/space_maximum_72"/>
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_quiz"
+        android:layout_marginLeft="@dimen/spacing_normal_16"
+        android:layout_marginTop="@dimen/space_maximum_72"
+        android:layout_marginRight="@dimen/spacing_normal_16"
+        android:layout_marginBottom="@dimen/spacing_huge_32"
+        style="@style/Button"/>
+
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/close_app"
+        style="@style/Button"
+        android:layout_marginRight="@dimen/spacing_normal_16"
+        android:layout_marginLeft="@dimen/spacing_normal_16"/>
+
+</LinearLayout>
