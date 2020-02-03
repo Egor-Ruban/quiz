@@ -17,12 +17,11 @@ class ResultActivity : AppCompatActivity() {
 
         val eq : Float = answered.toFloat()/total
         tvResult.text = when(eq){
-            in 0F..0.3F -> "попробуй ещё раз"
-            in 0.3F..0.7F -> "Не плохо"
-            in 0.7F..1F -> "Превосходно"
+            in 0F..0.3F -> resources.getString(R.string.quizFailed)
+            in 0.3F..0.7F -> resources.getString(R.string.quizOK)
+            in 0.7F..1F -> resources.getString(R.string.quizGreat)
             else -> "what are you"
         }
-
 
         btnResultClose.setOnClickListener {
             finish()

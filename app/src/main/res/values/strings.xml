@@ -3,4 +3,7 @@
     <string name="start_quiz">Начать</string>
     <string name="close_app">Выход</string>
     <string name="restart_app">Заново</string>
+    <string name="quizFailed">попробуй ещё раз</string>
+    <string name="quizOK">Не плохо</string>
+    <string name="quizGreat">Превосходно</string>
 </resources>
